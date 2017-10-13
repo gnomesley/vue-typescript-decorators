@@ -147,6 +147,8 @@ function collectOptions(cls: VClass<Vue>, keys: string[], optionsToWrite: Compon
   }
 }
 
+const BUILTIN = ['name', 'length', 'prototype']
+
 function Component_(meta: ComponentOptions<Vue> = {}): ClassDecorator {
   function decorate(cls: VClass<Vue>): VClass<Vue> {
     Component.inDefinition = true
@@ -176,7 +178,12 @@ function Component_(meta: ComponentOptions<Vue> = {}): ClassDecorator {
     collectData(cls, instance, Object.keys(instance), options)
     collectOptions(cls, optionKeys, options)
 
-    return Super.extend(options)
+    let ret = Super.extend(options)
+    let statics = Object.getOwnPropertyNames(cls).filter(k => BUILTIN.indexOf(k) < 0)
+    for (let key of statics) {
+      ret[key] = cls[key]
+    }
+    return ret
   }
   return decorate
 }
