@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './src/global'
 
 export {Component} from './src/core'
 export {Lifecycle} from './src/lifecycle'

@@ -147,7 +147,7 @@ function collectOptions(cls: VClass<Vue>, keys: string[], optionsToWrite: Compon
   }
 }
 
-const BUILTIN = ['name', 'length', 'prototype']
+const BUILTIN = ['name', 'length', 'prototype', 'arguments', 'caller']
 
 function Component_(meta: ComponentOptions<Vue> = {}): ClassDecorator {
   function decorate(cls: VClass<Vue>): VClass<Vue> {
