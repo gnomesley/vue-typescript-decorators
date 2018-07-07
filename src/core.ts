@@ -142,8 +142,12 @@ function findSuper(proto: Object): VClass<Vue> {
 
 function collectOptions(cls: VClass<Vue>, keys: string[], optionsToWrite: ComponentOptions<Vue>) {
   let newOptions = keys.mapToObject(makeObject(cls));
-  for(let key of keys) {
-    optionsToWrite[key] = objAssign({}, newOptions[key], optionsToWrite[key])
+  for (let key of keys) {
+    if (typeof newOptions[key] === 'object') {
+      optionsToWrite[key] = objAssign({}, newOptions[key], optionsToWrite[key])
+    } else {
+      optionsToWrite[key] = newOptions[key];
+    }
   }
 }
 
