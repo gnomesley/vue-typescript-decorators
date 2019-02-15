@@ -380,14 +380,8 @@ module.exports = require("vue");
 /* harmony export (immutable) */ __webpack_exports__["c"] = objAssign;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return makeObject; });
 /* unused harmony export global */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_reflect_metadata__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_reflect_metadata___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_reflect_metadata__);
-
 function NOOP() { }
 function getReflectType(target, key) {
-    if (typeof Reflect === "object" && typeof Reflect.getMetadata === "function") {
-        return Reflect.getMetadata('design:type', target, key);
-    }
     return null;
 }
 function createMap() {
@@ -821,12 +815,6 @@ function Mix(parent) {
     return parent.extend({ mixins: mixins });
 }
 
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-module.exports = require("reflect-metadata");
 
 /***/ })
 /******/ ]);

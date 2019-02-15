@@ -16,8 +16,7 @@ module.exports = {
   externals: {
     vue: 'vue',
     chai: 'chai',
-    vuex: 'vuex',
-    'reflect-metadata': 'reflect-metadata'
+    vuex: 'vuex'
   },
   module: {
     rules: [

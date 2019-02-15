@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 export declare function NOOP(): void;
 export declare function getReflectType(target: Object, key: string): any;
 export interface Map<T> {
