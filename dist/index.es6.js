@@ -1,11 +1,6 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var Vue = _interopDefault(require('vue'));
-var vuex = require('vuex');
+import Vue from 'vue';
+export { default as Vue } from 'vue';
+import { mapState, mapGetters, mapActions, mapMutations } from 'vuex';
 
 function NOOP() { }
 function getReflectType(target, key) {
@@ -417,10 +412,10 @@ var STATE_KEY = '$$State';
 var GETTER_KEY = '$$Getter';
 var ACTION_KEY = '$$Action';
 var MUTATION_KEY = '$$Mutation';
-var State = createBindingHelper(STATE_KEY, 'computed', vuex.mapState);
-var Getter = createBindingHelper(GETTER_KEY, 'computed', vuex.mapGetters);
-var Action = createBindingHelper(ACTION_KEY, 'methods', vuex.mapActions);
-var Mutation = createBindingHelper(MUTATION_KEY, 'methods', vuex.mapMutations);
+var State = createBindingHelper(STATE_KEY, 'computed', mapState);
+var Getter = createBindingHelper(GETTER_KEY, 'computed', mapGetters);
+var Action = createBindingHelper(ACTION_KEY, 'methods', mapActions);
+var Mutation = createBindingHelper(MUTATION_KEY, 'methods', mapMutations);
 function namespace(namespace, helper) {
     function namespacedHelper(a, b) {
         if (typeof b === 'string') {
@@ -499,35 +494,4 @@ function Mix(parent) {
     return parent.extend({ mixins: mixins });
 }
 
-exports.Vue = Vue;
-exports.Component = Component;
-exports.Trait = Component;
-exports.trait = Component;
-exports.Mixin = Component;
-exports.mixin = Component;
-exports.component = Component;
-exports.Lifecycle = Lifecycle;
-exports.lifecycle = Lifecycle;
-exports.Prop = Prop;
-exports.prop = Prop;
-exports.resultOf = resultOf;
-exports.Render = Render;
-exports.render = Render;
-exports.Transition = Transition;
-exports.transition = Transition;
-exports.Filter = Filter;
-exports.filter = Filter;
-exports.Watch = Watch;
-exports.watch = Watch;
-exports.Data = Data;
-exports.data = Data;
-exports.State = State;
-exports.state = State;
-exports.Getter = Getter;
-exports.getter = Getter;
-exports.Action = Action;
-exports.action = Action;
-exports.Mutation = Mutation;
-exports.mutation = Mutation;
-exports.namespace = namespace;
-exports.Mix = Mix;
+export { Component, Component as Trait, Component as trait, Component as Mixin, Component as mixin, Component as component, Lifecycle, Lifecycle as lifecycle, Prop, Prop as prop, resultOf, Render, Render as render, Transition, Transition as transition, Filter, Filter as filter, Watch, Watch as watch, Data, Data as data, State, State as state, Getter, Getter as getter, Action, Action as action, Mutation, Mutation as mutation, namespace, Mix };
