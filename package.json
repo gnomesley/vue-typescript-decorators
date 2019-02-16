@@ -3,6 +3,7 @@
   "version": "0.2.4",
   "description": "Typescript decorators for Vue2.0 originally forked off of av-ts",
   "main": "./dist/index.js",
+  "module": "./dist/index.es6.js",
   "scripts": {
     "compile": "webpack",
     "test": "mocha dist/test.js",

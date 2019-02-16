@@ -1,7 +1,12 @@
 export function NOOP() {}
 
+declare let Reflect: any;
+
 export function getReflectType(target: Object, key: string): any {
-    return null
+  if (typeof Reflect === "object" && typeof Reflect.getMetadata === "function") {
+    return Reflect.getMetadata('design:type', target, key)
+  }
+  return null
 }
 
 export interface Map<T> {
